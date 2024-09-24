@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./src/components/App/App";
-import "./vendor/index.css";
+import App from "./components/App/App";
+import "./index.css";
 // import WeatherCard from "./components/WeatherCard/WeatherCard";
 // import ItemCard from "./components/ItemCard/ItemCard";
 
