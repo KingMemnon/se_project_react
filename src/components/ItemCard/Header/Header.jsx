@@ -2,10 +2,14 @@ import "./Header.css";
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.png";
 function Header() {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
   return (
     <header className="header">
       <img className="header__logo" src={logo} />
-      <p className="header__meta">DATE,LOCATION</p>
+      <p className="header__meta">{currentDate},LOCATION</p>
       <button className="header__add-clothes-btn"> + Add Clothes</button>
       <div className="header__user-container">
         <p className="header__username">Terrence Tegegne</p>
