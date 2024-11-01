@@ -1,0 +1,26 @@
+.modal__content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.modal__image {
+  width: 100%;
+  height: auto;
+}
+
+.modal__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  cursor: pointer;
+}

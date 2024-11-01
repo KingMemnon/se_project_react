@@ -7,7 +7,7 @@ import { defaultClothingItems } from "../../utils/constants";
 function Main({ weatherData, handleCardClick }) {
   return (
     <main>
-      <WeatherCard />;
+      <WeatherCard />
       <section className="cards">
         <p className="cards__text">
           Today is 75 &deg; F / You may want to wear:
