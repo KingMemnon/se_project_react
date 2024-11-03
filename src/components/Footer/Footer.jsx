@@ -1,4 +1,6 @@
-function footer() {
+import "./Footer.css";
+
+function Footer() {
   return (
     <footer className="footer">
       <p className="footer__text_name">Developed by Christopher Dunbar</p>
@@ -6,3 +8,5 @@ function footer() {
     </footer>
   );
 }
+
+export default Footer;
