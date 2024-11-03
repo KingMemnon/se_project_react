@@ -13,15 +13,18 @@
   margin: 0;
   height: 40px;
   width: 89px;
+  gap: 24px;
 }
 
 .header__meta {
+  position: fixed;
   margin: 0;
-  height: 24px;
-  width: 160px;
+  left: 135px;
 }
 
 .header__add-clothes-btn {
+  position: fixed;
+  right: 260px;
   margin: 0;
   padding: 0;
   border-color: transparent;
