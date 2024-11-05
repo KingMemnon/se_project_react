@@ -9,21 +9,33 @@
   font-size: 20px;
 }
 
+.header__meta-logo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header__add-clothes {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .header__logo {
   margin: 0;
   height: 40px;
   width: 89px;
-  gap: 24px;
+  /* gap: 24px; */
 }
 
 .header__meta {
-  position: fixed;
+  /* position: fixed; */
   margin: 0;
   left: 135px;
 }
 
 .header__add-clothes-btn {
-  position: fixed;
+  /* position: fixed; */
   right: 260px;
   margin: 0;
   padding: 0;

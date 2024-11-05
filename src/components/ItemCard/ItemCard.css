@@ -20,16 +20,14 @@
   height: auto;
 }
 
-.cards__name {
+.card__name {
   position: absolute;
   text-align: center;
   font-family: CabinetGrotesk, sans-serif;
   background-color: #fff;
   top: 15px;
-  left: 0;
-  right: 0;
   margin: 0;
-  padding: 5px, 10px;
+  padding: 10px, 20px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;

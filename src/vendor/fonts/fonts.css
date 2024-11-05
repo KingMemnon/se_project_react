@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "CabinetGrotesk-Medium";
+  font-family: "CabinetGrotesk";
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: "CabinetGrotesk-Bold";
+  font-family: "CabinetGrotesk";
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -19,7 +19,7 @@
 }
 
 @font-face {
-  font-family: "CabinetGrotesk-Black";
+  font-family: "CabinetGrotesk";
   font-weight: 900;
   font-display: swap;
   font-style: normal;
