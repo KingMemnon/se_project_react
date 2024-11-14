@@ -25,18 +25,15 @@
   margin: 0;
   height: 40px;
   width: 89px;
-  /* gap: 24px; */
 }
 
 .header__meta {
-  /* position: fixed; */
   font-family: "Cabinet Grotesk", sans-serif;
   margin: 0;
   left: 135px;
 }
 
 .header__add-clothes-btn {
-  /* position: fixed; */
   right: 260px;
   margin: 0;
   padding: 0;

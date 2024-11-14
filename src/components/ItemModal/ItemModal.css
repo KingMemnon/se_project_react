@@ -1,24 +1,13 @@
-.modal__clothing-type {
+.modal__content_type_image {
   position: relative;
   background-color: #fff;
   border-radius: 16px;
   padding: 0;
-  /* padding: 28px 28px 36px; */
   max-width: 498px;
   box-sizing: border-box;
   width: 100%;
 }
 
-/* .modal__content {
-  position: relative;
-  background-color: #fff;
-  border-radius: 16px;
-  padding: 0;
-
-  max-width: 498px;
-  box-sizing: border-box;
-  width: 100%;
-} */
 .modal__image {
   display: block;
   border-radius: 16px;
@@ -27,9 +16,6 @@
   width: 100%;
   margin: 0;
   height: auto;
-  /* padding: 0; */
-
-  /* margin-bottom: 20px; */
 }
 
 .modal__footer {
@@ -37,10 +23,6 @@
   flex-direction: column;
   max-width: 498px;
   margin: 20px 0 0 32px;
-  /* justify-content: space-between; */
-  /* padding: 20px 0 12px; */
-  /* margin-top: 20px;
-  margin-bottom: 28px; */
 }
 
 .modal__caption {
@@ -50,7 +32,6 @@
   line-height: 24px;
   margin: 20px 0 0 0;
   padding-bottom: 12px;
-  /* margin-bottom: 24px; */
 }
 
 .modal__weather {
@@ -58,10 +39,7 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  margin: 0 0 32px -14px;
-  /* padding-top: 12px; */
-  /* margin-bottom: 32px; */
-  /* padding: 12px; */
+  margin: 0 0 32px 0;
 }
 
 .modal__close {
