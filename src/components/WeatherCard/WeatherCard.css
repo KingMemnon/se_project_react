@@ -9,7 +9,7 @@
 
 .weather-card__temp {
   display: flex;
-  font-family: Cabinet Grotesk, sans-serif;
+  font-family: "Cabinet Grotesk", sans-serif;
   color: #fff;
   font-size: 36px;
   line-height: 40px;
