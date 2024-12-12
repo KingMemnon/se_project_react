@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
+// import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
@@ -27,6 +28,12 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  // const handleToggleSwitchChange = () => {
+  //   currentTemperatureUnit === "F"
+  //     ? setCurrentTemperatureUnit("C")
+  //     : setCurrentTemperatureUnit("F");
+  // };
+
   const closeActiveModal = () => {
     setActiveModal("");
   };
@@ -42,6 +49,9 @@ function App() {
 
   return (
     <div className="page">
+      {/* <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      > */}
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
         <Main weatherData={weatherData} handleCardClick={handleCardClick} />
@@ -116,6 +126,7 @@ function App() {
         isOpen={activeModal === "preview"}
         handleCloseClick={closeActiveModal}
       />
+      {/* </CurrentTemperatureUnitContext.Provider> */}
     </div>
   );
 }
