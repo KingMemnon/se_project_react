@@ -15,17 +15,17 @@ function Header({ handleAddClick, weatherData }) {
           {currentDate},{weatherData.city}
         </p>
       </div>
+
       <div className="header__add-clothes">
+        <ToggleSwitch />
         <button
           onClick={handleAddClick}
           type="button"
           className="header__add-clothes-btn"
         >
-          {" "}
           + Add Clothes
         </button>
         <div className="header__user-container">
-          <ToggleSwitch />
           <p className="header__username">Terrence Tegegne</p>
           <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
         </div>
