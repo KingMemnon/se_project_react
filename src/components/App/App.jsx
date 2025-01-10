@@ -9,6 +9,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Footer from "../Footer/Footer";
 import { getWeather, processWeatherData } from "../../utils/weatherApi";
+import AddItemModal from "../AddItemModal/AddItemModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -41,15 +42,31 @@ function App() {
   const closeActiveModal = () => {
     setActiveModal("");
   };
-
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
         const processData = processWeatherData(data);
         setWeatherData(processData);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to fetch weather data:", error);
+        setWeatherData({
+          type: "unknown",
+          temp: { F: "N/A", C: "N/A" },
+          city: "Unknown",
+        });
+      });
   }, []);
+
+  // useEffect(() => {
+  //   getWeather(coordinates, APIkey)
+  //     .then((data) => {
+  //       const processData = processWeatherData(data);
+  //       // console.log("processData");
+  //       setWeatherData(processData);
+  //     })
+  //     .catch(console.error);
+  // }, []);
 
   return (
     <div className="page">
@@ -61,7 +78,28 @@ function App() {
           <Main weatherData={weatherData} handleCardClick={handleCardClick} />
           <Footer />
         </div>
-        <ModalWithForm
+        {activeModal === "add-garment" && (
+          <AddItemModal
+            activeModal={activeModal}
+            closeActiveModal={closeActiveModal}
+          />
+        )}
+
+        {activeModal === "preview" && (
+          <ItemModal
+            activeModal={activeModal}
+            card={selectedCard}
+            isOpen={activeModal === "preview"}
+            handleCloseClick={closeActiveModal}
+          />
+        )}
+
+        <ModalWithForm />
+        {/* <AddItemModal
+          activeModal={activeModal}
+          closeActiveModal={closeActiveModal}
+        /> */}
+        {/* <ModalWithForm
           title="New Garment"
           buttonText="Add Garment"
           // activeModal={activeModal}
@@ -126,13 +164,13 @@ function App() {
               Cold
             </label>
           </fieldset>
-        </ModalWithForm>
-        <ItemModal
+        </ModalWithForm> */}
+        {/* <ItemModal
           activeModal={activeModal}
           card={selectedCard}
           isOpen={activeModal === "preview"}
           handleCloseClick={closeActiveModal}
-        />
+        /> */}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );
