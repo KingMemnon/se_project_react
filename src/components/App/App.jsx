@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -7,9 +8,11 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
 import { getWeather, processWeatherData } from "../../utils/weatherApi";
 import AddItemModal from "../AddItemModal/AddItemModal";
+import { getitems } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -20,6 +23,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -58,6 +62,17 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    getitems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch clothing items:", error);
+        setClothingItems([]);
+      });
+  }, []);
+
   // useEffect(() => {
   //   getWeather(coordinates, APIkey)
   //     .then((data) => {
@@ -75,7 +90,23 @@ function App() {
       >
         <div className="page__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-          <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={<Profile onCardClick={handleCardClick} />}
+            />
+          </Routes>
+          {/* <Main weatherData={weatherData} handleCardClick={handleCardClick} /> */}
           <Footer />
         </div>
         {activeModal === "add-garment" && (

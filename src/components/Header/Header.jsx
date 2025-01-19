@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../images/logo.svg";
 import avatar from "../../images/avatar.png";
@@ -7,10 +8,15 @@ function Header({ handleAddClick, weatherData }) {
     month: "long",
     day: "numeric",
   });
+  // const username = "Terrence Tegegne";
+  // const avatar = "";
   return (
     <header className="header">
       <div className="header__meta-logo">
-        <img className="header__logo" src={logo} alt="WTWR Logo" />
+        <Link to="/">
+          <img className="header__logo" src={logo} alt="WTWR Logo" />
+        </Link>
+
         <p className="header__meta">
           {currentDate},{weatherData.city}
         </p>
@@ -25,10 +31,17 @@ function Header({ handleAddClick, weatherData }) {
         >
           + Add Clothes
         </button>
-        <div className="header__user-container">
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
-        </div>
+        <Link to="/profile" className="header__link">
+          <div className="header__user-container">
+            <p className="header__username">Terrence Tegegne</p>
+            <img
+              src={avatar}
+              alt="Terrence Tegegne"
+              className="header__avatar"
+            />
+            {/* <span className="header__avatar header__avatar_none">{username?.toUpperCase().charAt(0) || ""}</span> */}
+          </div>
+        </Link>
       </div>
     </header>
   );
