@@ -65,7 +65,7 @@ function App() {
   useEffect(() => {
     getitems()
       .then((data) => {
-        setClothingItems(data);
+        setClothingItems(data.items);
       })
       .catch((error) => {
         console.error("Failed to fetch clothing items:", error);
