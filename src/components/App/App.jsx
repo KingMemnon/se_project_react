@@ -25,6 +25,8 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
 
+  console.log(clothingItems);
+
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -65,7 +67,8 @@ function App() {
   useEffect(() => {
     getitems()
       .then((data) => {
-        setClothingItems(data.items);
+        console.log(data);
+        setClothingItems(data);
       })
       .catch((error) => {
         console.error("Failed to fetch clothing items:", error);
@@ -103,7 +106,12 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  clothingItems={clothingItems} //TESTING
+                  onCardClick={handleCardClick}
+                />
+              }
             />
           </Routes>
           {/* <Main weatherData={weatherData} handleCardClick={handleCardClick} /> */}
