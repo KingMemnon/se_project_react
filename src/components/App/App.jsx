@@ -145,6 +145,7 @@ function App() {
                   activeModal={activeModal}
                   handleAddClick={handleAddClick}
                   closeActiveModal={closeActiveModal}
+                  weatherData={weatherData}
                 />
               }
             />

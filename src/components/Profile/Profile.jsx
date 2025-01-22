@@ -9,6 +9,7 @@ function Profile({
   activeModal,
   handleAddClick,
   closeActiveModal,
+  weatherData,
 }) {
   return (
     <div className="profile">
@@ -22,6 +23,7 @@ function Profile({
           activeModal={activeModal}
           handleAddClick={handleAddClick}
           closeActiveModal={closeActiveModal}
+          weatherData={weatherData}
         />
       </section>
     </div>

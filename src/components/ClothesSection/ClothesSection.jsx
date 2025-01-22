@@ -8,6 +8,7 @@ function ClothesSection({
   activeModal,
   handleAddClick,
   closeActiveModal,
+  weatherData,
 }) {
   return (
     <div className="clothes-section">
@@ -18,11 +19,15 @@ function ClothesSection({
         </button>
       </div>
       <ul className="clothes-section__closet">
-        {clothingItems.map((item) => {
-          return (
-            <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
-          );
-        })}
+        {clothingItems
+          .filter((item) => {
+            return item.weather === weatherData.type;
+          })
+          .map((item) => {
+            return (
+              <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
+            );
+          })}
       </ul>
       {activeModal === "add-garment" && (
         <AddItemModal
