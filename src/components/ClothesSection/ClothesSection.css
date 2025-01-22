@@ -1,0 +1,27 @@
+.clothes-section {
+}
+
+.clothes-section__header {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.clothes-section__title {
+  margin: 40px;
+}
+.clothes-section__bttn {
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+}
+
+.clothes-section__closet {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  gap: 20px;
+}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+
 const AddItemModal = ({ activeModal, closeActiveModal }) => {
   const [formData, setFormData] = useState({
     name: "",

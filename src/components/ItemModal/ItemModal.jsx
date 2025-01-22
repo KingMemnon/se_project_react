@@ -1,7 +1,8 @@
 import "./ItemModal.css";
 import closeButtonImage from "../../images/closebutton.svg";
 
-function ItemModal({ card, handleCloseClick, isOpen }) {
+function ItemModal({ card, handleCloseClick, isOpen, openConfirmationModal }) {
+  // console.log("openConfirmationModal prop:", openConfirmationModal);
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">
@@ -16,10 +17,16 @@ function ItemModal({ card, handleCloseClick, isOpen }) {
             alt="Close Button"
           />
         </button>
-        <img className="modal__image" src={card.link} alt={card.name} />
+        <img className="modal__image" src={card.imageUrl} alt={card.name} />
         <div className="modal__footer">
           <h2 className="modal__caption">{card.name}</h2>
           <p className="modal__weather">Weather: {card.weather}</p>
+          <button
+            className="modal__delete"
+            onClick={() => openConfirmationModal(card)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

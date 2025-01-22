@@ -3,7 +3,13 @@ import "./Profile.css";
 import SideBar from "../SideBar/SideBar";
 import ClothesSection from "../ClothesSection/ClothesSection";
 
-function Profile({ clothingItems, onCardClick }) {
+function Profile({
+  clothingItems,
+  onCardClick,
+  activeModal,
+  handleAddClick,
+  closeActiveModal,
+}) {
   return (
     <div className="profile">
       <section className="profile__sidebar">
@@ -13,6 +19,9 @@ function Profile({ clothingItems, onCardClick }) {
         <ClothesSection
           clothingItems={clothingItems}
           onCardClick={onCardClick}
+          activeModal={activeModal}
+          handleAddClick={handleAddClick}
+          closeActiveModal={closeActiveModal}
         />
       </section>
     </div>
