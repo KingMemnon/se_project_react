@@ -1,19 +1,21 @@
 .clothes-section {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 177px;
-  left: 386px;
+  /* top: 177px;
+  left: 386px; */
   padding: 0;
   margin: 0;
 }
 
 .clothes-section__header {
   display: flex;
-  left: 385px;
-  top: 135px;
-  padding: 0;
-  margin: 40px, 0, 16px, 0;
+  /* justify-content: space-between; */
+  /* left: 385px;
+  top: 135px; */
+  /* padding: 0; */
+  /* margin: 40px, 0, 16px, 0; */
 }
 
 .clothes-section__title {
@@ -27,11 +29,11 @@
 }
 
 .clothes-section__closet {
-  display: flex !important;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 0;
   margin: 0;
-  list-style-type: none;
+  /* list-style-type: none; */
   gap: 20px;
 }
