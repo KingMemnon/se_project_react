@@ -42,10 +42,6 @@ function App() {
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
-
-    // currentTemperatureUnit === "F"
-    //   ? setCurrentTemperatureUnit("C")
-    //   : setCurrentTemperatureUnit("F");
   };
 
   const openConfirmationModal = (card) => {
@@ -108,16 +104,6 @@ function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   getWeather(coordinates, APIkey)
-  //     .then((data) => {
-  //       const processData = processWeatherData(data);
-  //       // console.log("processData");
-  //       setWeatherData(processData);
-  //     })
-  //     .catch(console.error);
-  // }, []);
-
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
@@ -140,7 +126,7 @@ function App() {
               path="/profile"
               element={
                 <Profile
-                  clothingItems={clothingItems} //TESTING
+                  clothingItems={clothingItems}
                   onCardClick={handleCardClick}
                   activeModal={activeModal}
                   handleAddClick={handleAddClick}
@@ -150,7 +136,7 @@ function App() {
               }
             />
           </Routes>
-          {/* <Main weatherData={weatherData} handleCardClick={handleCardClick} /> */}
+
           <Footer />
         </div>
 
@@ -178,7 +164,6 @@ function App() {
             handleCardDelete={handleDeleteCard}
           />
         )}
-
         <ModalWithForm />
       </CurrentTemperatureUnitContext.Provider>
     </div>

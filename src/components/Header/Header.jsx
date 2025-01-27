@@ -8,8 +8,6 @@ function Header({ handleAddClick, weatherData }) {
     month: "long",
     day: "numeric",
   });
-  // const username = "Terrence Tegegne";
-  // const avatar = "";
   return (
     <header className="header">
       <div className="header__meta-logo">
@@ -39,7 +37,6 @@ function Header({ handleAddClick, weatherData }) {
               alt="Terrence Tegegne"
               className="header__avatar"
             />
-            {/* <span className="header__avatar header__avatar_none">{username?.toUpperCase().charAt(0) || ""}</span> */}
           </div>
         </Link>
       </div>

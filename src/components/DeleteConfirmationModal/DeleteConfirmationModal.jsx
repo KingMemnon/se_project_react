@@ -25,7 +25,6 @@ function DeleteConfirmationModal({
           Are you sure you want to delete this item? <br /> This action is
           Irreversible.
         </h2>
-        {/* <p className="modal__warning-text">{card.name}</p> */}
         <div className="modal__actions">
           <button
             className="modal__confirm-button"

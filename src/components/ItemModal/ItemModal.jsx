@@ -2,7 +2,6 @@ import "./ItemModal.css";
 import closeButtonImage from "../../images/closebutton.svg";
 
 function ItemModal({ card, handleCloseClick, isOpen, openConfirmationModal }) {
-  // console.log("openConfirmationModal prop:", openConfirmationModal);
   return (
     <div className={`modal ${isOpen && "modal_opened"}`}>
       <div className="modal__content modal__content_type_image">

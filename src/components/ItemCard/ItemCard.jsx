@@ -13,7 +13,6 @@ function ItemCard({ item, onCardClick }) {
         className="card__image"
         src={item.imageUrl}
         alt={item.name}
-        // onError={(e) => (e.target.src = "/images/placeholder.jpg")}
       />
     </li>
   );

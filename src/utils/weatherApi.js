@@ -21,19 +21,6 @@ export const processWeatherData = (data) => {
     condition: data.weather[0].main.toLowerCase(),
     isDay: isDay(data.sys, Date.now()),
   };
-  // console.log("processWeatherData", result);
-  // const result = {};
-  // result.city = data.name;
-  // result.temp = { F: data.main.temp };
-  // result.type = getWeatherType(result.temp.F);
-  // result.condition = data.weather[0].main.toLowerCase();
-  // result.isDay = isDay(data.sys, Date.now());
-  // const weatherData = {
-  //   temperature: {
-  //     F: Math.round(data.main.temp),
-  //     C: Math.round(((data.main.temp - 32) * 5) / 9),
-  //   },
-  // };
   return result;
 };
 
@@ -50,6 +37,3 @@ const getWeatherType = (temp) => {
     return "cold";
   }
 };
-
-// weather.temperature.F = data.main.temp;
-// weather.temperature.C = Math.round((data.main.temp - 32) * 5/9);
