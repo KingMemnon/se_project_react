@@ -1,0 +1,71 @@
+.modal__delete-container {
+  position: relative;
+  /* display: flex; */
+  background-color: #fff;
+  width: 670px;
+  height: 280px;
+  padding: 60px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.modal__close {
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.modal__title {
+  display: block;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.modal__actions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.modal__confirm-button {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  width: auto;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  color: #ff4d00;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__confirm-button:hover {
+  opacity: 0.6;
+}
+
+.modal__cancel-button {
+  bottom: 16px;
+  right: 100px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 20px;
+  width: auto;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}

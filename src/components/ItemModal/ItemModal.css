@@ -19,10 +19,27 @@
 }
 
 .modal__footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   max-width: 498px;
   margin: 20px 0 0 32px;
+}
+
+.modal__delete {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: Cabinet Grotesk, sans-serif;
+  font-size: 20px;
+  width: auto;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  color: #ff4d00;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 .modal__caption {
