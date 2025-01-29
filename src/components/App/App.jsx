@@ -39,6 +39,25 @@ function App() {
     setActiveModal("add-garment");
   };
 
+  const handleAddItem = (newItem) => {
+    fetch("http://localhost:3001/items", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...newItem, _id: Date.now() }),
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to add item");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setClothingItems((prevItems) => [...prevItems, data]);
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
@@ -145,6 +164,7 @@ function App() {
           <AddItemModal
             activeModal={activeModal}
             closeActiveModal={closeActiveModal}
+            handleAddItem={handleAddItem}
           />
         )}
 

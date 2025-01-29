@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./AddItemModal.css";
 
-const AddItemModal = ({ activeModal, closeActiveModal }) => {
+const AddItemModal = ({ activeModal, closeActiveModal, handleAddItem }) => {
   const [formData, setFormData] = useState({
     name: "",
     imageUrl: "",
@@ -26,10 +26,9 @@ const AddItemModal = ({ activeModal, closeActiveModal }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-
+    handleAddItem(formData);
+    // console.log("Form Submitted:", formData);
     setFormData({ name: "", imageUrl: "", weather: "" });
-
     closeActiveModal();
   };
 
