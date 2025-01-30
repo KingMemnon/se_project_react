@@ -148,10 +148,8 @@ function App() {
                 <Profile
                   clothingItems={clothingItems}
                   onCardClick={handleCardClick}
-                  activeModal={activeModal}
                   handleAddClick={handleAddClick}
                   closeActiveModal={closeActiveModal}
-                  weatherData={weatherData}
                 />
               }
             />
