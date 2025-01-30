@@ -33,7 +33,7 @@ const AddItemModal = ({ activeModal, closeActiveModal, handleAddItem }) => {
         closeActiveModal();
       })
       .catch((error) => {
-        console.error("Error adding item:", error);
+        console.error("Error adding item(s):", error);
       });
   };
 
