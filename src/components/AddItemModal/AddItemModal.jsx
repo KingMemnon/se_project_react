@@ -26,10 +26,15 @@ const AddItemModal = ({ activeModal, closeActiveModal, handleAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAddItem(formData);
-    // console.log("Form Submitted:", formData);
-    setFormData({ name: "", imageUrl: "", weather: "" });
-    closeActiveModal();
+
+    handleAddItem(formData)
+      .then(() => {
+        setFormData({ name: "", imageUrl: "", weather: "" });
+        closeActiveModal();
+      })
+      .catch((error) => {
+        console.error("Error adding item:", error);
+      });
   };
 
   return (
@@ -103,5 +108,4 @@ const AddItemModal = ({ activeModal, closeActiveModal, handleAddItem }) => {
     </ModalWithForm>
   );
 };
-
 export default AddItemModal;
