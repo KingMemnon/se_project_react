@@ -12,7 +12,7 @@ import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
 import { getWeather, processWeatherData } from "../../utils/weatherApi";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getitems, addItem, deleteItem } from "../../utils/api";
+import { getItems, addItem, deleteItem } from "../../utils/api";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
   };
 
   const handleAddItem = (newItem) => {
-    addItem(newItem)
+    return addItem(newItem)
       .then((data) => {
         setClothingItems((prevItems) => [...prevItems, data]);
       })
@@ -86,7 +86,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getitems()
+    getItems()
       .then((data) => {
         console.log(data);
         setClothingItems(data);

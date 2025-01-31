@@ -113,12 +113,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sweatshirt.png?etag=008a9674757bea2e0bdb31242e364be0",
       "weather": "cold",
       "_id": 1738324938963
-    },
-    {
-      "name": "asdasd",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sweatshirt.png?etag=008a9674757bea2e0bdb31242e364be0",
-      "weather": "cold",
-      "_id": 1738326837001
     }
   ]
 }
