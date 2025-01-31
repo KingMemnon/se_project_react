@@ -1,14 +1,7 @@
 import "./ClothesSection.css";
-import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemCard from "../ItemCard/ItemCard";
 
-function ClothesSection({
-  onCardClick,
-  clothingItems,
-  activeModal,
-  handleAddClick,
-  closeActiveModal,
-}) {
+function ClothesSection({ onCardClick, clothingItems, handleAddClick }) {
   return (
     <div className="clothes-section">
       <div className="clothes-section__header">
@@ -22,12 +15,6 @@ function ClothesSection({
           <ItemCard key={item._id} item={item} onCardClick={onCardClick} />
         ))}
       </ul>
-      {activeModal === "add-garment" && (
-        <AddItemModal
-          activeModal={activeModal}
-          closeActiveModal={closeActiveModal}
-        />
-      )}
     </div>
   );
 }

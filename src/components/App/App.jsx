@@ -9,11 +9,10 @@ import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
-
 import Footer from "../Footer/Footer";
 import { getWeather, processWeatherData } from "../../utils/weatherApi";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getitems } from "../../utils/api";
+import { getitems, addItem, deleteItem } from "../../utils/api";
 import DeleteConfirmationModal from "../DeleteConfirmationModal/DeleteConfirmationModal";
 
 function App() {
@@ -40,23 +39,11 @@ function App() {
   };
 
   const handleAddItem = (newItem) => {
-    fetch("http://localhost:3001/items", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...newItem, _id: Date.now() }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error("Failed to add item");
-        }
-        return res.json();
-      })
+    addItem(newItem)
       .then((data) => {
         setClothingItems((prevItems) => [...prevItems, data]);
       })
-      .catch((error) => {
-        console.error(error.message);
-      });
+      .catch(console.error);
   };
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -69,27 +56,14 @@ function App() {
   };
 
   const handleDeleteCard = (card) => {
-    fetch(`http://localhost:3001/items/${card._id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (res.ok) {
-          console.log("Item deleted");
-        }
-        return res.json();
-      })
+    deleteItem(card._id)
       .then(() => {
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== card._id)
         );
-        setActiveModal("");
-        setCardToDelete(null);
+        closeActiveModal();
       })
-      .catch((error) => {
-        console.error("Error deleting item:", error);
-        setActiveModal("");
-        setCardToDelete(null);
-      });
+      .catch(console.error);
   };
 
   const closeActiveModal = () => {
@@ -138,7 +112,6 @@ function App() {
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
-                  currentTemperatureUnit={currentTemperatureUnit}
                 />
               }
             />
