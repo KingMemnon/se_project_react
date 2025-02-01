@@ -27,8 +27,6 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [cardToDelete, setCardToDelete] = useState({});
 
-  console.log(clothingItems);
-
   const handleCardClick = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
