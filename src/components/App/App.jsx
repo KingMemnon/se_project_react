@@ -39,11 +39,9 @@ function App() {
   };
 
   const handleAddItem = (newItem) => {
-    return addItem(newItem)
-      .then((data) => {
-        setClothingItems((prevItems) => [...prevItems, data]);
-      })
-      .catch(console.error);
+    return addItem(newItem).then((data) => {
+      setClothingItems((prevItems) => [data, ...prevItems]);
+    });
   };
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
@@ -112,6 +110,7 @@ function App() {
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  currentTemperatureUnit={currentTemperatureUnit}
                 />
               }
             />
