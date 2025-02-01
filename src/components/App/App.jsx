@@ -108,7 +108,6 @@ function App() {
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
-                  currentTemperatureUnit={currentTemperatureUnit}
                 />
               }
             />

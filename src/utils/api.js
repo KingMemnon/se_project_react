@@ -17,4 +17,4 @@ const addItem = (item) =>
 const deleteItem = (itemId) =>
   fetch(`${baseUrl}/items/${itemId}`, { method: "DELETE" }).then(checkResponse);
 
-export { getItems, addItem, deleteItem };
+export { checkResponse, getItems, addItem, deleteItem };
